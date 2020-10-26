@@ -27,10 +27,12 @@ require_once "Controller/table_controller.php";
 $controller = new insert_controller();
 
 
-if(isset($_POST['all_users']))  {
+if(isset($_POST['all_users'])) {
     $controller = new table_controller();
+    if (isset($_POST['back'])) {
+        $controller = new insert_controller();
+    }
 }
-
 $controller->display();
 
 

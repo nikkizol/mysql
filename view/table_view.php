@@ -22,7 +22,7 @@
         <?php foreach ($students as $student): ?>
             <tr>
                 <td><?php echo $student->getId(); ?></td>
-                <td><?php echo $student->getFirstName(); ?></td>
+                <td><a href=profile.php?user=<?php echo $student->getId();?>><?php echo $student->getFirstName(); ?></a></td>
                 <td><?php echo $student->getLastName(); ?></td>
                 <td><?php echo $student->getEmail(); ?></td>
                 <td><?php echo $student->getCreatedAt(); ?></td>
@@ -31,7 +31,7 @@
         </tbody>
     </table>
     <form method="post">
-        <button type="submit" name="all_users" class="btn btn-primary">Show all users</button>
+        <button type="submit" name="back" class="btn btn-primary">Go back</button>
     </form>
 </div>
 
