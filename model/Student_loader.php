@@ -1,7 +1,7 @@
 <?php
 
 
-class Student_Loader extends DatabaseConnection
+class Student_loader extends DatabaseConnection
 {
     private array $students = [];
 
@@ -11,7 +11,7 @@ class Student_Loader extends DatabaseConnection
         $handle = $this->Connection()->prepare("SELECT * FROM student");
         $handle->execute();
         foreach ($handle->fetchAll() as $student) {
-            $this->students[$student["id"]] = new Student($student['id'], $student['first_name'], $student['last_name'], $student['email'], $student['created_at']);
+            $this->students[$student["id"]] = new Student($student['id'], $student['first_name'], $student['last_name'], $student['email'], $student["created_at"]);
         }
     }
 
@@ -25,5 +25,3 @@ class Student_Loader extends DatabaseConnection
 
 
 }
-
-

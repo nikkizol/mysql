@@ -12,30 +12,34 @@
 <body>
 <div class="container">
     <h1>Your info</h1>
-    <fieldset>
-        <legend>Your indo</legend>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="f_name">First Name:</label>
-                <input type="text" name="f_name" id="f_name" class="form-control"
-                       value="">
+    <form method="post">
+        <fieldset>
+            <legend>Your info</legend>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="f_name">First Name:</label>
+                    <input type="text" name="f_name" id="f_name" class="form-control"
+                           value="">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="l_name">Last Name:</label>
+                    <input type="text" id="l_name" name="l_name" class="form-control"
+                           value="">
+                </div>
             </div>
-            <div class="form-group col-md-6">
-                <label for="l_name">Last Name:</label>
-                <input type="text" id="l_name" name="l_name" class="form-control"
-                       value="">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" class="form-control"
+                           value="">
+                </div>
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" class="form-control"
-                       value="">
-            </div>
-        </div>
-    </fieldset>
+        </fieldset>
 
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    </form><br>
+    <form method="post">
+        <button type="submit" name="all_users" class="btn btn-primary">Show all users</button>
     </form>
 </div>
 

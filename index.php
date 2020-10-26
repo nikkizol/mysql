@@ -7,14 +7,30 @@ error_reporting(E_ALL);
 
 require_once "Model/DatabaseConnection.php";
 require_once "Model/Student.php";
-require_once "Model/Student_Loader.php";
+require_once "Model/Student_Insert.php";
+require_once "Model/Student_loader.php";
 require_once "Controller/insert_controller.php";
+require_once "Controller/table_controller.php";
 
 
 
 
+//$insert = new insert_controller();
+//$insert->display();
+//
+//if (isset($_POST["all_users"])) {
+//    $table = new table_controller();
+//    $table->displayTable();
+//}
 
 
+$controller = new insert_controller();
 
+
+if(isset($_POST['all_users']))  {
+    $controller = new table_controller();
+}
+
+$controller->display();
 
 
