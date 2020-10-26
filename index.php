@@ -5,8 +5,11 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
-require "connection.php";
-require "insert.php";
+require_once "Model/DatabaseConnection.php";
+require_once "Model/Student.php";
+require_once "Model/Student_Loader.php";
+require_once "Controller/insert_controller.php";
+
 
 
 
