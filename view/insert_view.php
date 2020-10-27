@@ -40,10 +40,26 @@
                     <span class="good"><?php echo $emailG; ?></span>
                 </div>
             </div>
+            <div>
+                <div class="form-group col-md-6">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control"
+                           value="">
+                    <span class="error"><?php echo $passwordErr; ?></span>
+                    <span class="good"><?php echo $lnameG; ?></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cpassword">Password Confirmation:</label>
+                    <input type="password" id="cpassword" name="cpassword" class="form-control"
+                           value="">
+                    <span class="error"><?php echo $cpasswordErr; ?></span>
+                    <span class="good"><?php echo $lnameG; ?></span>
+                </div>
+            </div>
         </fieldset>
-
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-    </form><br>
+    </form>
+    <br>
     <form method="post">
         <button type="submit" name="all_users" class="btn btn-primary">Show all users</button>
     </form>

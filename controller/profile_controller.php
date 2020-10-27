@@ -18,7 +18,8 @@ class profile_controller
         $students = $getStudents->getStudents();
         if (isset($_GET['user'])) {
             $userID = $_GET['user'];
-        }
+        } else $userID = end($students)->getId();
+
         searchGroupsArray($students, $userID);
 
         $data = @file_get_contents('https://api.thecatapi.com/v1/images/search');
@@ -27,7 +28,7 @@ class profile_controller
 
         require "view/profile_view.php";
 
-
+return $userID;
     }
 
 }

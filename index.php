@@ -14,26 +14,24 @@ require_once "Controller/table_controller.php";
 require_once "Controller/profile_controller.php";
 
 
-
-
-
 $controller = new insert_controller();
 
 
-if(isset($_POST['all_users'])) {
+if (isset($_POST['all_users'])) {
     $controller = new table_controller();
-    if (isset($_POST['back'])) {
-        $controller = new insert_controller();
-    }
 }
-if(isset($_GET['user'])) {
+if (isset($_GET['user'])) {
     $userID = $_GET['user'];
-    $controller= new profile_controller();
-    if (isset($_POST['backToAllUSers'])) {
-        $controller = new table_controller();
-    }
-
+    $controller = new profile_controller();
 }
+if (isset($_POST['backToAllUSers'])) {
+    $controller = new table_controller();
+}
+if (isset($_POST['back'])) {
+    header("Location: http://mysql-challenge.localhost/");
+    $controller = new insert_controller();
+}
+
 
 $controller->display();
 
