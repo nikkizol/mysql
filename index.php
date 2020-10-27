@@ -12,9 +12,14 @@ require_once "Model/Student_loader.php";
 require_once "Controller/insert_controller.php";
 require_once "Controller/table_controller.php";
 require_once "Controller/profile_controller.php";
+require_once "Controller/login_controller.php";
 
 
-$controller = new insert_controller();
+
+
+$controller = new login_controller();
+
+//$controller = new insert_controller();
 
 
 if (isset($_POST['all_users'])) {
