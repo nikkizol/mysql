@@ -15,14 +15,6 @@ require_once "Controller/table_controller.php";
 
 
 
-//$insert = new insert_controller();
-//$insert->display();
-//
-//if (isset($_POST["all_users"])) {
-//    $table = new table_controller();
-//    $table->displayTable();
-//}
-
 
 $controller = new insert_controller();
 
