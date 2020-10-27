@@ -11,6 +11,7 @@ require_once "Model/Student_Insert.php";
 require_once "Model/Student_loader.php";
 require_once "Controller/insert_controller.php";
 require_once "Controller/table_controller.php";
+require_once "Controller/profile_controller.php";
 
 
 
@@ -25,6 +26,12 @@ if(isset($_POST['all_users'])) {
         $controller = new insert_controller();
     }
 }
+if(isset($_GET['user'])) {
+    $userID = $_GET['user'];
+    $controller= new profile_controller();
+
+}
+
 $controller->display();
 
 

@@ -12,6 +12,7 @@
 <body>
 <div class="container">
     <h1>All users</h1>
+    <form method="get">
     <table id ='customers'>
         <tbody>
         <td>ID</td>
@@ -22,7 +23,7 @@
         <?php foreach ($students as $student): ?>
             <tr>
                 <td><?php echo $student->getId(); ?></td>
-                <td><a href=profile.php?user=<?php echo $student->getId();?>><?php echo $student->getFirstName(); ?></a></td>
+                <td><a  href=index.php?user=<?php echo $student->getId();?>><?php echo $student->getFirstName(); ?></a></td>
                 <td><?php echo $student->getLastName(); ?></td>
                 <td><?php echo $student->getEmail(); ?></td>
                 <td><?php echo $student->getCreatedAt(); ?></td>
@@ -30,6 +31,7 @@
         <?php endforeach; ?>
         </tbody>
     </table>
+        </form>
     <form method="post">
         <button type="submit" name="back" class="btn btn-primary">Go back</button>
     </form>
