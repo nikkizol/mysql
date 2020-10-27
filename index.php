@@ -29,6 +29,9 @@ if(isset($_POST['all_users'])) {
 if(isset($_GET['user'])) {
     $userID = $_GET['user'];
     $controller= new profile_controller();
+    if (isset($_POST['backToAllUSers'])) {
+        $controller = new table_controller();
+    }
 
 }
 
