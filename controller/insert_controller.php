@@ -9,7 +9,7 @@ class insert_controller
 {
     public function display()
     {
-        session_start();
+//        session_start();
 
         $email = "";
         $fname = "";

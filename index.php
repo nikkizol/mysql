@@ -4,6 +4,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+session_start();
 
 require_once "Model/DatabaseConnection.php";
 require_once "Model/Student.php";
@@ -16,10 +17,10 @@ require_once "Controller/login_controller.php";
 
 
 
-
 $controller = new login_controller();
 
 if (isset($_POST['logout'])) {
+    session_destroy();
     header("Location: http://mysql-challenge.localhost/");
 }
 
@@ -38,9 +39,11 @@ if (isset($_POST['backToAllUSers'])) {
     $controller = new table_controller();
 }
 
+if (isset($_GET['page'])){
+    $controller = new table_controller();
+}
 
-
-
+var_dump($_SESSION);
 
 
 $controller->display();

@@ -13,6 +13,7 @@ class table_controller
         $getStudents = new Student_Loader();
         $students = $getStudents->getStudents();
         require "view/table_view.php";
+
     }
 
 }

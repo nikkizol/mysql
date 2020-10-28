@@ -15,6 +15,9 @@
     <img src= <?php echo $img; ?> >
     <p> <?php var_dump(searchGroupsArray($students, $userID)) ?></p>
     <form method="post">
+        <?php echo $delete; ?>
+    </form>
+    <form method="post">
         <button type="submit" name="backToAllUSers" class="btn btn-primary">Go back</button>
     </form>
 </div>

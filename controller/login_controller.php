@@ -5,8 +5,8 @@ class login_controller extends DatabaseConnection
 {
     public function display()
     {
-
-        session_start();
+        $view = "view/login_view.php";
+//        session_start();
 
         $email = "";
         $ERROR = "";
@@ -41,19 +41,20 @@ class login_controller extends DatabaseConnection
                 }
             }
 
-            if (empty($ERROR)){
-//                session_regenerate_id();
-//                $_SESSION['loggedin'] = TRUE;
-//                $_SESSION['name'] = $_POST['email'];
-//                echo 'Welcome ' . $_SESSION['name'] . '!';
-                $controller = new table_controller();
-                $controller->display();
-            } ;
-
+            if (empty($ERROR)) {
+                $stmt = $this->Connection()->prepare("SELECT id FROM student WHERE email='$email'");
+                $stmt->execute();
+                $id = $stmt->fetch();
+                $_SESSION["id"] = $id['id'];
+                $info = $_GET['page'] = 'info';
+                header("Location: http://mysql-challenge.localhost/?page=$info");
+            }
             $_SESSION["email"] = $email;
 
 
+
         }
-        require "view/login_view.php";
+
+        require $view;
     }
 }

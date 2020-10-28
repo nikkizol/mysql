@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <h1>Login</h1>
-    <form action="index.php" method="post">
+    <form method="post">
         <fieldset>
             <div class="form-row">
                 <div class="form-group col-md-6">
