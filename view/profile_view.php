@@ -14,12 +14,13 @@
     <h1>User:<?php echo searchGroupsArray($students, $userID)->getFirstName()?></h1>
     <img src= <?php echo $img; ?> >
     <p> <?php var_dump(searchGroupsArray($students, $userID)) ?></p>
+
     <form method="post">
-        <?php echo $delete; ?>
-    </form>
-    <form method="post">
+        <?php echo $update; ?>
+        <?php echo $delete; "<br>"?>
         <button type="submit" name="backToAllUSers" class="btn btn-primary">Go back</button>
     </form>
+    <?php echo $form; ?>
 </div>
 
 <style>
