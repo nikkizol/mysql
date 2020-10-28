@@ -32,8 +32,8 @@
         </tbody>
     </table>
         </form>
-    <form method="post">
-        <button type="submit" name="back" class="btn btn-primary">Go back</button>
+    <form  method="post">
+        <button type="submit" name="logout" class="btn btn-primary">Log out</button>
     </form>
 </div>
 

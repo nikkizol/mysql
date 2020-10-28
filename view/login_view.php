@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <h1>Login</h1>
-    <form method="post">
+    <form action="index.php" method="post">
         <fieldset>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -33,8 +33,8 @@
         <button type="submit" name="submit" class="btn btn-primary">Log in</button>
     </form>
     <br>
-    <form method="post">
-        <button type="submit" name="all_users" class="btn btn-primary">Register</button>
+    <form method="get">
+        <button type="submit" name="register" class="btn btn-primary">Register</button>
     </form>
 </div>
 

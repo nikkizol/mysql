@@ -19,11 +19,16 @@ require_once "Controller/login_controller.php";
 
 $controller = new login_controller();
 
-//$controller = new insert_controller();
+if (isset($_POST['logout'])) {
+    header("Location: http://mysql-challenge.localhost/");
+}
 
+if (isset($_GET['register'])) {
+    $controller = new insert_controller();
+}
 
-if (isset($_POST['all_users'])) {
-    $controller = new table_controller();
+if (isset($_POST['loginPage'])) {
+    header("Location: http://mysql-challenge.localhost/");
 }
 if (isset($_GET['user'])) {
     $userID = $_GET['user'];
@@ -32,10 +37,10 @@ if (isset($_GET['user'])) {
 if (isset($_POST['backToAllUSers'])) {
     $controller = new table_controller();
 }
-if (isset($_POST['back'])) {
-    header("Location: http://mysql-challenge.localhost/");
-    $controller = new insert_controller();
-}
+
+
+
+
 
 
 $controller->display();

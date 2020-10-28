@@ -46,22 +46,20 @@
                     <input type="password" id="password" name="password" class="form-control"
                            value="">
                     <span class="error"><?php echo $passwordErr; ?></span>
-                    <span class="good"><?php echo $lnameG; ?></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="cpassword">Password Confirmation:</label>
                     <input type="password" id="cpassword" name="cpassword" class="form-control"
                            value="">
                     <span class="error"><?php echo $cpasswordErr; ?></span>
-                    <span class="good"><?php echo $lnameG; ?></span>
                 </div>
             </div>
         </fieldset>
-        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Register</button>
     </form>
     <br>
     <form method="post">
-        <button type="submit" name="all_users" class="btn btn-primary">Show all users</button>
+        <button type="submit" name="loginPage" class="btn btn-primary">Login page</button>
     </form>
 </div>
 
