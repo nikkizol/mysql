@@ -58,10 +58,10 @@ class profile_controller extends DatabaseConnection
 <button type='submit' name='confirm' class='btn btn-primary'>Confirm</button>
 </form>";
         }
-            if (isset($_POST['confirm'])) {
-                    $fname = $_POST["f_name"];
-                    $lname = $_POST["lname"];
-                    var_dump($lname);
+        if (isset($_POST['confirm'])) {
+            $fname = $_POST["f_name"];
+            $lname = $_POST["lname"];
+            if ((!empty($fname) && (!empty($lname)))) {
                 $handle = $this->Connection()->prepare('UPDATE student SET first_name = :firstname, last_name = :lastname WHERE id = :id');
                 $handle->bindValue(':id', $userID);
                 $handle->bindValue(':firstname', $fname);
@@ -69,6 +69,8 @@ class profile_controller extends DatabaseConnection
                 $handle->execute();
                 header("Location: http://mysql-challenge.localhost/index.php?user=$userID");
             }
+        }
+
 
         require "view/profile_view.php";
 

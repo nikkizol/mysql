@@ -57,9 +57,9 @@ class insert_controller
                 }
             }
             if (!empty($_POST["password"]) && ($_POST["password"] == $_POST["cpassword"])) {
-                $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+                $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
                 $cpassword = $_POST["cpassword"];
-                if (strlen($_POST["password"]) <= '8') {
+                if (strlen($_POST["password"]) <= '7') {
                     $passwordErr = "Your Password Must Contain At Least 8 Characters!";
                 } elseif (!preg_match("#[0-9]+#", $password)) {
                     $passwordErr = "Your Password Must Contain At Least 1 Number!";
@@ -84,8 +84,9 @@ class insert_controller
                 if (empty($emailErr) && empty($f_nameErr) && empty($lnameErr) && empty($passwordErr) && empty($cpasswordErr)) {
                     $students = new Student_Insert($fname, $lname, $email, $password);
                     $controller = new profile_controller();
-                    $userId = $controller->display();
-                    header("Location: http://mysql-challenge.localhost/index.php?user=$userId");
+                    $userID = $controller->display();
+                    $_SESSION["id"] = $userID;
+                    header("Location: http://mysql-challenge.localhost/index.php?user=$userID");
                 }
             }
 
